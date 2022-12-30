@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ring loader css</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            background: #000;
+        }
+
+        .loader {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+            border-radius: 50%
+        }
+
+        .loader span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+            animation: ringloader 0.5s linear infinite;
+        }
+
+        .loader:after {
+            position: absolute;
+            content: '';
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: #240229;
+            border-radius: 50%;
+        }
+
+        @keyframes ringloader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader span:nth-child(1) {
+            filter: blur(5px);
+        }
+
+        .loader span:nth-child(2) {
+            filter: blur(6px);
+        }
+
+        .loader span:nth-child(3) {
+            filter: blur(7px);
+        }
+
+        .loader span:nth-child(4) {
+            filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</body></html>

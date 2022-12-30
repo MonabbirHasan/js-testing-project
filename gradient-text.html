@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading....</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            background: #000;
+        }
+
+    .text {
+            background: linear-gradient(90deg, #ff4757, #be2edd);
+            font-size: 60px;
+            font-weight: 900;
+            color: transparent;
+            text-emphasis-color: aliceblue;
+            font-family: tahoma;
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text1 5s linear infinite;
+            box-shadow: 20px 20px 40px #000;
+            clip-path: polygon(100% 0, 0% 100%, 0 0);
+            color: aliceblue;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        .t {
+            position: relative;
+            background: linear-gradient(90deg, #ffffff, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          clip-path: polygon(100% 0, 0% 100%, 100% 100%); 
+            
+        }
+        ::-webkit-scrollbar{
+            width: 20px;
+            background:linear-gradient(red,green);
+        box-shadow: 0 0 7px rgba(0,0,0,0.4);
+        }
+        ::-webkir-scrollbar-thumb{
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">loading....</div>
+    <div class="text t">loading....</div>    
+</body></html>

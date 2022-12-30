@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loader</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            background: #000;
+        }
+        .loader {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: loader .9s linear infinite;
+            background: linear-gradient(50deg, transparent, transparent, 60%, #21f123);
+        }
+        .loader:before {
+            position: absolute;
+            content: '';
+            top: 5px;
+            left: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 90px;
+            height: 90px;
+            background: #000;
+            border-radius: 50%;
+        }
+        @keyframes loader {
+            0% {
+                transform: rotate(0)
+            }
+            100% {
+                transform: rotate(360deg);
+                filter: hue-rotate(320deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+</body></html>

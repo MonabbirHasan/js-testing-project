@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date time in javascript</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            background: #fff;
+        }
+
+        .time-box {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 250px;
+            background: #fff;
+            box-shadow: -2px -2px 5px #eee, 2px 2px 5px #eee;
+            border-radius: 10px;
+            border: 3px solid #21f123;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .time-box .minuts,
+        .time-box .second,
+        .time-box .hours,
+        .date,
+        .month,
+        .years {
+            position: relative;
+            top: 0;
+            left: 17px;
+            margin: 10px;
+            width: 60px;
+            height: 50px;
+            padding: 5px;
+            background: #21f123;
+            box-shadow: 0 0 5px #21f123;
+            font-size: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #fff;
+            font-family: fantasy;
+        }
+
+        .time-box div:nth-child(1) {
+            height: 50px;
+            background: #be2edd;
+            color: #fff;
+        }
+
+        .time-box div:nth-child(2) {
+            height: 50px;
+            background: #f9ca24;
+            color: #fff;
+        }
+
+        .time-box div:nth-child(3) {
+            height: 50px;
+            background: #0abde3;
+            color: #fff;
+        }
+
+        .time-box div:nth-child(4) {
+            height: 50px;
+            background: #2e86de;
+            color: #fff;
+        }
+
+        .time-box div:nth-child(5) {
+            height: 50px;
+            background: #5f27cd;
+            color: #fff;
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="time-box">
+        <div class="hours">1</div>
+        <div class="minuts">12</div>
+        <div class="second">23</div>
+        <div class="date"></div>
+        <div class="month">11</div>
+        <div class="years">1999</div>
+        <p></p>
+
+    </div>
+    <script>
+        var minuts = document.querySelector(".minuts"),
+            second = document.querySelector(".second"),
+            hours = document.querySelector(".hours"),
+            datte = document.querySelector(".date"),
+            month = document.querySelector(".month"),
+            years = document.querySelector(".years"),
+            p = document.querySelector("p");
+
+
+
+        function time() {
+            var date = new Date();
+            hours.innerHTML = +date.getHours() + ' ' + '-hor';
+            minuts.innerHTML = date.getMinutes() + ' ' + '-min';
+            second.innerHTML = date.getSeconds() + ' ' + '-soc';
+            month.innerHTML = date.getMonth() + ' ' + '-mont';
+            years.innerHTML = date.getFullYear() + ' ' + '-yr';
+            p.innerHTML = date.getMilliseconds() + ' ' + 'milli';
+
+//            switch (date.getDay()) {
+//                case (date.getDay()==1):
+//                    var dayss = datte.innerHTML = date.getDay() + ' ' + '- monday';
+//                    break;
+//                case  (date.getDay()==2):
+//                    var dayss = datte.innerHTML = date.getDay() + ' ' + '- tue';
+//                    break;
+//                case (date.getDay()==3):
+//                    var dayss = datte.innerHTML = date.getDay() + ' ' + '- wed';
+//                    break;
+//                case (date.getDay()==4):
+//                    var dayss = datte.innerHTML = date.getDay() + ' ' + '- thu';
+//                    break;
+//                case (date.getDay()==5):
+//                    var dayss = datte.innerHTML = date.getDay() + ' ' + '- fri';
+//                    break;
+//            }
+        }
+        time();
+        setInterval(time, 1000);
+    </script>
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MOUSE MOVE IMAGES</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+           background: linear-gradient(to left,#21f123,#ff2020);
+            cursor: pointer;
+            filter: hue-rotate(360deg);
+        clip-path:circle(100px at var(--x) var(--y));
+            border: 5px solid blue;
+            backdrop-filter:blur(30px);
+        }
+        .container .box{
+            position: absolute;
+/*
+            top: var(--x);
+            left: var(--y);
+*/
+            top: 0;
+            left: 0;
+            width: 100px;
+/*            clip-path:circle(100px at var(--x) var(--y));*/
+            height: 100px;
+            background:green;
+            z-index: 1;
+            box-shadow: -2px -2px 5px #eee,2px 2px 5px #eee;
+            border-radius: 50%;
+        }
+
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <div class="box"></div>
+    </div>
+    <script>
+    var container=document.querySelector(".container");
+        var pos=document.documentElement;
+        pos.addEventListener("mousemove",function(e){
+pos.style.setProperty('--x',e.clientX+'px');
+pos.style.setProperty('--y',e.clientY+'px');      
+        });
+
+    </script>
+</body>
+
+</html>

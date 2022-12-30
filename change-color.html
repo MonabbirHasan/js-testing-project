@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change image background image color in javascript</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .bg {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            mix-blend-mode: hue;
+            object-fit: cover;
+            backdrop-filter: blur(.8px);
+        }
+
+        img {
+            margin-top: 20px;
+            width: 400px;
+            height: 400px;
+            filter: blur(.2px);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/watch5.jpg">
+    <div class="bg"></div>
+    <script>
+        var bg = document.querySelector(".bg");
+
+        function changecolor() {
+            return Math.floor(Math.random() * 253);
+        }
+        bg.addEventListener("click", function() {
+            bg.style.backgroundColor = 'rgba(' + changecolor() + ',' + changecolor() + ',' + changecolor() + ')';
+        });
+    </script>
+</body></html>

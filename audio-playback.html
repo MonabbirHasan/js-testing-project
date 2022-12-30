@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function initAudio() {
+
+            var audio = document.querySelector("audio");
+            var video = document.querySelector("video");
+
+            var speedlist = document.getElementById("speedlist");
+
+            speedlist.addEventListener("change", changeSpeed);
+
+            function changeSpeed(event) {
+                audio.playbackRate = event.target.value;
+                video.playbackRate = event.target.value;
+            }
+        }
+        window.addEventListener("load", initAudio);
+    </script>
+</head>
+
+<body>
+    <audio controls src="audio/rocstar.mp3.m4a" type="audio/mp3"></audio>
+    <video src="audio/Phir%20Chala%20%20Heart%20Touching%20Love%20Story%20%20New%20Sad%20Songs%20Hindi%202020%20%20Pane%20Ki%20Chahat%20Main%20Kho%20Gaya_2021%2007%2014_17%2041%2003_1_680.mp4" width="400px" height="300px" controls></video>
+    <select id="speedlist">
+        <!-- <audio src="audio/rocstar.mp3.mp4a"></audio>-->
+        <option value="1">change speed</option>
+        <option value=".5">.5</option>
+        <option value="1">Normal</option>
+        <option value="1.5">1.5</option>
+        <option value="2">2</option>
+        <option value="2.5">2.5</option>
+
+    </select>
+</body></html>

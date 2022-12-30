@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            position: relative;
+            top: 0;
+            left: 0;
+            border: none;
+            background: #21f123;
+            box-shadow: -2px -2px 5px #21f123, 2px 2px 5px #21f123;
+            color: #000;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="instructions">
+        <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px" controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg' data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+            <source src="audio/Phir%20Chala%20%20Heart%20Touching%20Love%20Story%20%20New%20Sad%20Songs%20Hindi%202020%20%20Pane%20Ki%20Chahat%20Main%20Kho%20Gaya_2021%2007%2014_17%2041%2003_1_680.mp4" type='video/mp4' />
+            <source src="audio/Phir%20Chala%20%20Heart%20Touching%20Love%20Story%20%20New%20Sad%20Songs%20Hindi%202020%20%20Pane%20Ki%20Chahat%20Main%20Kho%20Gaya_2021%2007%2014_17%2041%2003_1_680.mp4" type='video/webm' />
+        </video>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="makeBig()">Big</button>
+        <button onclick="makeSmall()">Small</button>
+        <button onclick="makeNormal()">Normal</button>
+        <button onclick="restart();">Restart</button>
+        <button onclick="skip(-10)">Rewind</button>
+        <button onclick="skip(10)">Fastforward</button>
+        <input type="range" id="volume">
+    </div>
+
+    <script>
+        //controls for video.js HTML5 video player
+        var myVideo = document.getElementById("my_video_1");
+        var volume = document.getElementById("volume");
+        var video = document.querySelector("video");
+
+
+        volume.addEventListener("click", function() {
+            video.volume = volume.value / 100;
+
+        })
+
+        function playPause() {
+            if (myVideo.paused) {
+                myVideo.play();
+            } else {
+                myVideo.pause();
+            }
+        }
+
+        function makeBig() {
+            myVideo.width = 560;
+        }
+
+        function makeSmall() {
+            myVideo.width = 320;
+        }
+
+        function makeNormal() {
+            myVideo.width = 420;
+        }
+
+        function skip(value) {
+            var video = document.getElementById("my_video_1");
+            video.currentTime += value;
+            console.log(video.currentTime += value);
+        }
+
+        function restart() {
+            var video = document.getElementById("my_video_1");
+            video.currentTime = 0;
+        }
+    </script>
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="10">
+        <title>Document</title>
+        <style>
+        
+        .location {
+        width: 350px;
+        height: 50px;
+        position: relative;
+        padding: 10px;
+        left: -500px;
+        transition: .5s;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background: #fff;
+        box-shadow: -2px -2px 5px #eee,2px 2px 5px #eee;
+        border-left: 4px solid #21f123;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 30px;
+        text-transform: capitalize;
+        font-weight: 900;
+        color: transparent;
+        -webkit-text-stroke-color: #21f123;
+        -webkit-text-stroke-width: 1px;
+        /*   animation: animate 2s linear infinite;
+        */}
+        .location.active{
+        animation: animate 3s case-in-out forwards;
+        transition: .5s;
+        left: 10px;
+        }
+        @keyframes  animate {
+        0%{
+        left:10px ;
+        } 100%{
+        left:10px ;
+        }
+        
+        }
+        </style>
+    </head>
+    <body>
+        <div class="location">
+            <span></span>
+        </div>
+        <script>
+        if(navigator.onLine===true){
+        document.querySelector("span").innerHTML="now you are online";
+        document.querySelector(".location").classList.add("active");
+        }else {
+        document.querySelector(".span").innerHTML="pease conect the internete conection";
+        document.querySelector(".location").style.display = 'none';
+        }
+        
+        </script>
+    </body>
+</html>

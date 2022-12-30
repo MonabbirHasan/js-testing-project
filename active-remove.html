@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span.active{
+            color: red;
+        }
+        span{
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+            cursor: pointer;
+            background: #21f123;
+            margin: 10px;
+        }
+        .location{
+            position: relative;
+            font-size: 30px;
+            color: #21f123;
+            text-transform: capitalize;
+        }
+    
+    
+    </style>
+</head>
+<body>
+   <span onclick="changecolor(event);" class="active">HOME</span><br>
+   <span onclick="changecolor(event);">HOME</span><br>
+   <span onclick="changecolor(event);">HOME</span><br>
+   <span onclick="changecolor(event);">HOME</span><br>
+   <span onclick="changecolor(event);">HOME</span><br>
+   <span onclick="changecolor(event);">HOME</span><br>
+<br>
+<div class="location"></div>
+<script>
+    function changecolor(event){
+        
+      document.querySelectorAll("span.active").forEach(function(item){
+          item.classList.remove("active");
+    
+});  
+        event.target.classList.add("active");
+        
+}
+    setInterval(function(){
+        if(navigator.onLine){
+                   document.querySelector(".location").innerHTML='you online now';            
+        }else{
+                   document.querySelector(".location").innerHTML='you not online now';
+
+        }
+
+},100);
+
+    
+</script>
+</body>
+</html>

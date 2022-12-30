@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            background: #000;
+        }
+
+        .text {
+            font-size: 4em;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            font-weight: var(--weight);
+            --weight: 800;
+        }
+
+        .t {
+            position: absolute;
+            top: 50%;
+            transition: .5s;
+            left: 30%;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            --shadow: #333333;
+            cursor: cell;
+            text-shadow:
+                -1px -4px 8px var(--shadow),
+                -1px -4px 8px var(--shadow),
+                -1px -4px 8px var(--shadow),
+                -1px -4px 8px var(--shadow),
+                -1px -4px 8px var(--shadow),
+                6px 3px 4px var(--shadow),
+                6px 3px 4px var(--shadow),
+                6px 3px 4px var(--shadow),
+                6px 3px 4px var(--shadow),
+                6px 3px 4px var(--shadow);
+        }
+
+        .t:hover {
+            --size: 150px;
+        }
+
+        .t2 {
+            --size: 100px;
+            clip-path: circle(var(--size) at 14% -67%);
+            color: var(--clr);
+            --clr: #21f123;
+        }
+
+        .t3 {
+            --size: 100px;
+            clip-path: circle(var(--size) at 90% 168%);
+            color: var(--color);
+            --color: aqua;
+        }
+        .t4 {
+            --size: 100px;
+            --color: red;
+            clip-path: circle(var(--size) at 50% 120%);
+            color: var(--color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">
+        <div class="t t1">text fill color</div>
+        <div class="t t2">text fill color</div>
+        <div class="t t3">text fill color</div>
+        <div class="t t4">text fill color</div>
+    </div>
+</body></html>

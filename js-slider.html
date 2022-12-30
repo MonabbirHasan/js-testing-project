@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript slider</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            transition: .5s;
+        }
+
+        .slider-bx {
+            position: relative;
+            mix-blend-mode: hue;
+            width: 500px;
+             justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 300px;
+            background: #fff;
+            transform-style: preserve-3d;
+            transform: perspective(500px);
+            text-align: center;
+            transition: .5s ease-in-out;
+            box-shadow: -2px -2px 5px #eee, 2px 2px 5px #eee;
+        }
+
+        .slider-1 {
+            position: absolute;
+            background: orange;
+            padding: 50px 50px;
+            opacity: 0;
+            transform: scale(.4);
+            width: 250px;
+            height: 100px;
+            z-index: 10000;
+            display: none;
+            transition-delay: .5s all;
+/*            transform: translateX(0) rotateY(0);*/
+            top: -300px;
+            box-shadow: -2px -2px 2px #ff3030, 2px 2px 2px #ff2020;
+        }
+
+        .slider-1.active {
+            display: block;
+            transition-delay: .5s all;
+/*            transform: translateX(60px) rotateX(190deg);*/
+            transform: scale(1.1);
+            opacity: 1;
+            z-index: 10000;
+            transform-style: preserve-3d;
+            transform: perspective(900px);
+            animation: animate 1s ease-in-out forwards;
+            box-shadow: -1px -1px 2px #ff2020, 1px 1px 2px #21f123;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: scale(0) rotate(0) translate(200%, 0px);
+            }
+
+            100% {
+                transform: scale(1.9) rotateY(360deg) translateY(200px) translateZ(-300px);
+            }
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: -0px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #eee;
+        }
+
+        .btn {
+            position: relative;
+            float: right;
+            transform: translate(-250%, 40px);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">next</button>
+    <br>
+    <br>
+    <br>
+    <div class="slider-bx">
+        <div class="slider-1 active"><img src="images/darkpc.jpg"></div>
+        <div class="slider-1 active"><img src="images/camera1.jpg"></div>
+        <div class="slider-1"><img src="images/camera2.jpg"></div>
+        <div class="slider-1"><img src="images/camera3.jpg"></div>
+        <div class="slider-1"><img src="images/shoe6.jpg"></div>
+        <div class="slider-1"><img src="images/camera1.jpg"></div>
+        <div class="slider-1"><img src="images/camera2.jpg"></div>
+        <div class="slider-1"><img src="images/camera3.jpg"></div>
+        <div class="slider-1"><img src="images/shoe6.jpg"></div>
+        <div class="slider-1"><img src="images/camera1.jpg"></div>
+        <div class="slider-1"><img src="images/camera2.jpg"></div>
+        <div class="slider-1"><img src="images/camera3.jpg"></div>
+        <div class="slider-1"><img src="images/shoe6.jpg"></div>
+        <div class="slider-1"><img src="images/darkpc.jpg"></div>
+        <div class="slider-1"><img src="images/camera1.jpg"></div>
+        <div class="slider-1"><img src="images/camera2.jpg"></div>
+        <div class="slider-1"><img src="images/camera3.jpg"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        var slaider = document.getElementsByClassName("slider-1");
+        var nextt = document.querySelector("button");
+        var i = 0;
+        var v=1;
+
+            function slider() {
+            var k=k++;
+                var count = i++;
+                var slider_length = 16;
+                for(var k=0;k< slaider.length;k++){
+                    document.getElementsByClassName("slider-1")[k++].classList.remove("active");
+                }
+
+                if (document.getElementsByClassName("slider-1")[1].classList.contains('active')) {
+
+                    document.getElementsByClassName("slider-1")[count].classList.add("active");
+                }
+                if (document.getElementsByClassName("slider-1")[slider_length].classList.contains("active")) {
+                    for (var j = 0; j < slaider.length; j++) {
+                        document.getElementsByClassName("slider-1")[j].classList.remove("active");
+                        document.getElementsByClassName("slider-1")[1].classList.add("active");
+
+                    }
+                    i = 0;
+                }
+            }
+            slider();
+
+
+         setInterval(slider, 1000);
+    </script>
+
+</body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>image color </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+
+            /*            filter: 
+            hue-rotate(261deg) 
+            saturate(292%)
+            drop-shadow(3px 5px 4px #eee)
+            contrast(90%) 
+            brightness(110%)
+            blur(.5px);*/
+
+        }
+
+        .edite-box {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 270px;
+            position: relative;
+            left: 30px;
+            background: linear-gradient(to left, #3742fa, #57606f);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .edite-box input {
+            margin: 5px;
+        }
+
+        .range-box {
+            display: inline-block;
+            height: 40px;
+            background: transparent;
+            padding: 10px 20px;
+            position: relative;
+            top: 20px;
+        }
+
+        .range-box p {
+            display: inline-block;
+            font-size: 20px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+            color: #ffffff;
+            padding: 0px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/my.jpg"/><br>
+    <div class="edite-box">
+        bright:<input type="range" class="brightness range" value="10"><br>
+        hue:<input type="range" class="hue-rotate range" value="10"><br>
+        contrast:<input type="range" class="contrast range" value="10"><br>
+        saturate:<input type="range" class="saturate range" value="10"><br>
+        sapia:<input type="range" class="sapia range" value="10"><br>
+        blur:<input type="range" class="blur range" value="10"><br>
+        <br>
+        <div class="range-box">
+            <p class="range1">0</p>
+            <p class="range2">0</p>
+            <p class="range3">0</p>
+            <p class="range4">0</p>
+            <p class="range5">0</p>
+            <p class="range5">0</p>
+        </div>
+    </div>
+    <script>
+        var image = document.querySelector("img"),
+            brightness = document.querySelector(".brightness"),
+            huerotate = document.querySelector(".hue-rotate"),
+            contrast = document.querySelector(".contrast"),
+            saturate = document.querySelector(".saturate"),
+            sapia = document.querySelector(".sapia"),
+            blur = document.querySelector(".blur");
+
+        var p = document.querySelectorAll("p")
+
+        huerotate.onmousemove = function() {
+            image.setAttribute("style",
+                'filter:hue-rotate(' + huerotate.value * 5 + 'deg) brightness(' + brightness.value * 5 + '%) saturate(' + saturate.value * 5 + '%) contrast(' + contrast.value * 5 + '%) sepia(' + sapia.value * 5 + '%) blur(' + blur.value / 40 + 'px)');
+
+            for (var i = 0; i < p.length; i++) {
+                brightness.onmousemove = function() {
+                    brightness.value;
+                    p[0].innerHTML = brightness.value;
+                }
+                saturate.onmousemove = function() {
+                    saturate.value;
+                    p[1].innerHTML = saturate.value;
+                }
+                contrast.onmousemove = function() {
+                    contrast.value;
+                    p[2].innerHTML = contrast.value;
+                }
+                sapia.onmousemove = function() {
+                    sapia.value;
+                    p[3].innerHTML = sapia.value;
+                }
+                blur.onmousemove = function() {
+                    blur.value;
+                    p[4].innerHTML = blur.value;
+                }
+
+
+            }
+
+            p[5].innerHTML = huerotate.value;
+        }
+    </script>
+</body></html>

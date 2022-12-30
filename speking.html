@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="bn">
+    <head>
+        <meta charset="UTF-8">
+        <title>sepeaking</title>
+        <style>
+        
+        canvas{
+        width: 200px;
+        height: 200px;
+        background: red;
+        }
+        .src_input{
+            box-shadow: 0 0 10px #fff;
+            padding: 5px;
+            font-size: 16px;
+            text-align: left;
+            border: none;
+            outline: none;
+            border: 2px solid #21f123;
+            border-radius: 10px;
+            margin: 20px 0px;
+        }
+            
+        </style>
+    </head>
+    <body style="height: 200vh;">
+        <button id="start">
+        Start Recording
+        </button>
+        <textarea style="font-size: 20px;color: blue;" id="text"></textarea>
+        <!-- <script async src="https://cse.google.com/cse.js?cx=7639159f3bf2b7fda"></script>
+        <div class="gcse-search"></div> -->
+<!--
+        <form class="forming" action="https://google.com/search" method="get">
+            <input type="text" class="src_input" name="q"autocomplete="on" autofocus placeholder="write anything of your">
+        </form>
+-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <textarea type="text" name="q" id="transcript" placeholder="Speak" class="keyboardInput"></textarea>
+
+<input  id="action" type="button" onclick="toggle()" value="Start"/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script>
+
+            
+            
+            
+// var recognition = new webkitSpeechRecognition();
+// recognition.continuous = true;
+// recognition.interimResults = true;
+// recognition.lang = "bn-IN";
+
+// var listening = false;
+
+// recognition.onresult = function(event) {
+//     var interim_transcript = '';
+//     var final_transcript = '';
+
+//     for (var i = event.resultIndex; i < event.results.length; ++i) {
+//       if (event.results[i].isFinal) {
+//         final_transcript += event.results[i][0].transcript;
+//          document.getElementById('transcript').value = final_transcript;
+//         toggle();
+//       } else {
+//         interim_transcript += event.results[i][0].transcript;
+//             document.getElementById('transcript').value = interim_transcript;
+//       }
+//     }
+//     console.log(interim_transcript, final_transcript);
+
+//   };
+
+// function toggle() {
+//   if(listening) {
+//     recognition.stop();  
+//     listening = false;
+//   document.getElementById('action').value = "Start";
+//   }
+//   else {
+//     recognition.start();
+//     listening = true;
+//   document.getElementById('action').value = "Stop";
+//   }
+// }
+            
+            
+            var input=document.getElementById('text')
+         var btn = document.querySelector("button");
+         var utterThis = new SpeechSynthesisUtterance();
+            utterThis.lang='ar';
+            utterThis.rate=1;
+            console.log(utterThis.lang)
+            
+            btn.onclick=function(){
+                utterThis.text=input.value;
+                utterThis.volume=.9;
+               var voices= window.speechSynthesis.speak(utterThis)
+            }
+            
+            
+            
+        
+            
+//                console.log(.getVoices())
+
+        
+//        var input=document.getElementById("text")
+//        var src_input=document.querySelector(".src_input")
+//        var forming=document.querySelector(".forming");
+//        forming.addEventListener("keyup",function(){
+//             
+//            forming.submit();
+//        
+//         
+//        })
+//
+//        var voice=new webkitSpeechRecognition();
+//
+//        btn.onclick=function(){
+//        voice.start();
+//        }
+//        
+//        voice.addEventListener("result",function(e){
+//        var text=e.results[0][0].transcript;
+//        src_input.value=text
+//        if(src_input.value==='youtube'){
+//        window.open('https://www.youtube.com/watch?v=vOHqPJxJJoU&list=RDvOHqPJxJJoU&start_radio=1');
+//        }if(src_input.value==='new gojol' || src_input.value==="new ghazal"){
+//        window.open("https://www.youtube.com/watch?v=qTGu_ZpNEH0&list=PLu2jp1mLR4eSpgsUz14nKts6vuS7l18SP&index=33");
+//        }if(src_input.value==='open google' || src_input.value==='open Google'){
+//        window.open("https://www.google.com.bd/?hl=bn");
+//        }
+//        if(src_input.value==='close YouTube'){
+//        window.close("https://www.youtube.com/watch?v=qTGu_ZpNEH0&list=PLu2jp1mLR4eSpgsUz14nKts6vuS7l18SP&index=34");
+//        }
+//        console.log(text)
+//        });
+
+        </script>
+        
+    </body>
+</html>

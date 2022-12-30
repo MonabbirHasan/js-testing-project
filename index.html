@@ -1,64 +1,68 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>MOUSE MOVE IMAGES</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>sanminer</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			display: flex;
+			background: #333;
+		}
 
-        .container {
-            margin: 0;
-            padding: 0;
-            position: relative;
-            width: 100%;
-            height: 100vh;
-           background: linear-gradient(to left,#21f123,#ff2020);
-            cursor: pointer;
-            filter: hue-rotate(360deg);
-        clip-path:circle(100px at var(--x) var(--y));
-            border: 5px solid blue;
-            backdrop-filter:blur(30px);
-        }
-        .container .box{
-            position: absolute;
-/*
-            top: var(--x);
-            left: var(--y);
-*/
-            top: 0;
-            left: 0;
-            width: 100px;
-/*            clip-path:circle(100px at var(--x) var(--y));*/
-            height: 100px;
-            background:green;
-            z-index: 1;
-            box-shadow: -2px -2px 5px #eee,2px 2px 5px #eee;
-            border-radius: 50%;
-        }
-
-       
-
-    </style>
+		input{
+			border: none;
+			border: 2px solid #2196f3;
+			background: none;
+			padding: 5px;
+			margin: 10px 0px;
+		}
+		textarea{
+			border: none;
+			background: none;
+			border: 2px solid #2196f3;
+		}
+		input[type="submit"]{
+			background: blue;
+			font-size: 16px;
+			color: #fff;
+			padding: 10px;
+			cursor: pointer;
+			border: none;
+		}
+	</style>
 </head>
-
 <body>
-    <div class="container">
-    <div class="box"></div>
-    </div>
-    <script>
-    var container=document.querySelector(".container");
-        var pos=document.documentElement;
-        pos.addEventListener("mousemove",function(e){
-pos.style.setProperty('--x',e.clientX+'px');
-pos.style.setProperty('--y',e.clientY+'px');      
-        });
+	<form>
+		<input type="text" class="username"><br>
+		<textarea name="massage"></textarea><br>
+		<button type="submit">sumit</button>
+	</form>
+	<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+	<script type="text/javascript">
+document.querySelector(".button").addEventListener("submit",function(e){
+e.preventDefault();
 
-    </script>
+Email.send({
+    SecureToken : " 3db2c862-2127-4652-9624-abbce49685f1",
+    To : 'hmd320667@gmail.com',
+    From :document.querySelector(".username").value,
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+})
+
+	</script>
 </body>
-
 </html>

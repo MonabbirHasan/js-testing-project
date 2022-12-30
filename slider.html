@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript slider image</title>
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+        }
+        .slider-box{
+            width: 100%;
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            overflow: scroll;
+        }
+        .slider{
+            position:relative;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            
+        }
+
+        .box-1 img{
+            width: 100%;
+            height: auto;
+            margin-top: 80px;
+        }
+        .next{
+            color: red;
+            position: fixed;
+            right: 90px;
+        }
+        .prev{
+            color: red;
+            position: fixed;
+            left: 90px;
+        }
+        .box-1.box{
+            filter: hue-rotate(50deg);
+            transform: translateY(-111%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-box">
+       <button class="prev" onclick="prev()">prev</button>
+            <div class="slider">
+                <div class="box-1 box"><img src="img/dog.png" ></div>              
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+                <div class="box-1"><img src="img/danis.jpg" ></div>
+            </div>
+         <button class="next" onclick="next()">next</button>
+
+    </div>
+    <script>
+        var box=document.querySelectorAll('.box-1')[0];
+        var btn=document.querySelector('.next')
+    setInterval(()=>{
+          if(document.getElementsByClassName('box-1')[0].classList.contains("box")){
+        document.getElementsByClassName('box-1')[count++].classList.add("box")
+              
+        }
+
+    },599)
+        
+        var count=0;
+        var size=0;
+    function next(){
+        box.style.transform=count(siz)
+        
+    }
+      
+    
+    
+    
+    
+    </script>
+</body>
+</html>

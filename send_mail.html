@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="javascript:sendMail()" class="form">
+		<input type="text" class="username" placeholder="username"><br>
+		<input type="email" class="email" placeholder="userEmail"><br>
+		<input type="text" class="subject" placeholder="subject"><br>
+		<textarea class="sender" placeholder="send your massge"></textarea><br>
+		<input type="submit" class="btn" value="send_mail" ><br>
+	</form>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript">
+
+
+function sendMail(){
+	var username=$(".username").val();
+	var useremail=$(".email").val();
+	var subject=$(".subject").val();
+	var sender=$(".sender").val();
+	var body='name'+username+'email'+useremail+'subject'+subject+'sender'+sender;
+}
+
+
+
+
+
+Email.send({
+    SecureToken:" 50612369-baa8-45b6-ba64-196833f4e636 ",
+    To : 'mdmunabbir3@gmail.com',
+    From : "hmd320667@gmail.com",
+    Subject : "new mail this is ",
+    Body :"hello "
+}).then(
+  message =>{
+  	
+  }
+);
+	</script>
+</body>
+</html>
